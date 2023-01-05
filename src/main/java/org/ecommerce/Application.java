@@ -3,26 +3,25 @@ package org.ecommerce;
 public class Application {
 	public static void main(String[] args) {
 
-		Product iPhone = new Product("iPhone", 1300.00);
-		Product Mac = new Product("Mac", 2300.00);
-		Product iPad = new Product("iPad", 300.00);
-		Product iPod = new Product("iPod", 700.00);
+		Product apple = new Product("Apple", 13.00);
+		Product banana = new Product("Banana", 17.00);
+		Product kiwi = new Product("Kiwi", 3.00);
+		Product orange = new Product("Orange", 7.00);
 
-		CartItem iphoneItem = new CartItem(iPhone, 5);
-		CartItem macItem = new CartItem(Mac, 15);
-		CartItem padItem = new CartItem(iPad, 25);
-		CartItem podItem = new CartItem(iPod, 45);
-
+		CartItem appleItem = new CartItem(apple, 5);
+		CartItem bananaItem = new CartItem(banana, 15);
+		CartItem kiwiItem = new CartItem(kiwi, 25);
+		CartItem orangeItem = new CartItem(orange, 45);
 
 		Cart itemsInCart = new Cart();
-		itemsInCart.addAllCartItems(iphoneItem);
-		itemsInCart.addAllCartItems(macItem);
-		itemsInCart.addAllCartItems(padItem);
-		itemsInCart.addAllCartItems(podItem);
+		itemsInCart.addAllCartItems(appleItem);
+		itemsInCart.addAllCartItems(bananaItem);
+		itemsInCart.addAllCartItems(kiwiItem);
+		itemsInCart.addAllCartItems(orangeItem);
 
+		itemsInCart.setDeliveryFee(itemsInCart.getSumTotalPriceOfProductsInCart());
 		itemsInCart.runCartOutput();
 		System.out.println(itemsInCart.runSumTotalSumOfAllItemsInCart());
-		System.out.println("DDS: " + itemsInCart.calculateDDS());
 
 	}
 }
