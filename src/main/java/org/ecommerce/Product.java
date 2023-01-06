@@ -9,8 +9,8 @@ package org.ecommerce;
  * @version 1.0
  */
 public class Product {
-	private String productLabel;
-	private double productPrice;
+	private final String productLabel;
+	private final double productPrice;
 
 	Product(String productLabel, double productPrice) {
 		this.productLabel = productLabel;
@@ -25,9 +25,8 @@ public class Product {
 		return this.productPrice;
 	}
 
-	// Method is outputting the data from the constructor in the console.
+	// Method is outputting the data from the product class in the console.
 	public String runProductOutput() {
-//		return "Name of the product: " + getProductLabel() + "\n" + "Price of the product: " + getProductPrice();
-		return String.format("\nName of the product: %s \nPrice of the product: %s", getProductLabel(), getProductPrice());
+		return String.format("\nLabel of the product: %s \nPrice of the product: $%s", getProductLabel(), getProductPrice());
 	}
 }
