@@ -12,6 +12,12 @@ public class Product {
 	private final String productLabel;
 	private final double productPrice;
 
+	// Constructor with default values.
+	Product() {
+		this.productLabel = "Dragon fruit";
+		this.productPrice = 10.0;
+	}
+
 	Product(String productLabel, double productPrice) {
 		this.productLabel = productLabel;
 		this.productPrice = productPrice;

@@ -11,6 +11,12 @@ public class CartItem {
 	private final Product product;
 	private int quantity;
 
+	// Constructor with default values.
+	CartItem() {
+		this.product = new Product();
+		this.quantity = 4;
+	}
+
 	CartItem(Product product, int quantity) {
 		this.product = product;
 		this.quantity = quantity;

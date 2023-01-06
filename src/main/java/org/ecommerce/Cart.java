@@ -26,16 +26,20 @@ public class Cart {
 		cartItems.add(cartItem);
 	}
 
-	// Method decreasing the count of quantity of single product by 1(additional functionality).
+	// Method decreasing the count of quantity of single product by n-count(additional functionality).
 	// When the quantity is less than 1 the product is removed from the cart.
-	public void decreaseQuantityForItem(CartItem cartItem) {
+	public void decreaseQuantityForItem(CartItem cartItem, int decreaseCountBy) {
 		int getQuantity = cartItem.getQuantity();
-		getQuantity--;
-		cartItem.setQuantity(getQuantity);
+		if(decreaseCountBy > getQuantity) {
+			System.out.printf("Operation cannot be performed: Decrease count is less than quantity. Item: %s's quantity stays unchanged. %n", cartItem.getProduct().getProductLabel());
+		} else {
+			getQuantity -= decreaseCountBy;
+			cartItem.setQuantity(getQuantity);
 
-		if (getQuantity < 1) {
-			removeCartItem(cartItem);
-			System.out.println("Item: " + cartItem.getProduct().getProductLabel() + " was deleted due to 0 quantity.");
+			if (getQuantity < 1) {
+				removeCartItem(cartItem);
+				System.out.println("Item: " + cartItem.getProduct().getProductLabel() + " was deleted due to 0 quantity.");
+			}
 		}
 	}
 
